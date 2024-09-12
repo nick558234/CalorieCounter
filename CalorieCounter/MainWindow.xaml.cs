@@ -33,12 +33,15 @@ namespace CalorieCounter
             }
 
             int leeftijd;
-            if (int.TryParse(LeeftijdTextBox.Text, out leeftijd))
+            if (!int.TryParse(LeeftijdTextBox.Text, out leeftijd))
             {
-                if (GeslachtVrouw.IsChecked == true && ZwangerCheckBox.IsChecked == true && leeftijd <= 18)
-                {
-                    MessageBox.Show("Teen mom");
-                }
+                MessageBox.Show("Leeftijd is geen geldig getal.", "Fout", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (GeslachtVrouw.IsChecked == true && ZwangerCheckBox.IsChecked == true && leeftijd <= 18)
+            {
+                MessageBox.Show("Teen mom");
             }
 
             double calorieën = BerekenBasisCalorieën();
