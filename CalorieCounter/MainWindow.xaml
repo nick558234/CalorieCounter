@@ -1,0 +1,53 @@
+﻿<Window x:Class="CalorieCounter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalorieCounter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!-- Geslacht -->
+        <TextBlock Grid.Column="0" Margin="5,0,5,0" VerticalAlignment="Center">Geslacht:</TextBlock>
+        <StackPanel VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="5,5,5,5" Grid.ColumnSpan="2">
+            <RadioButton Content="Man" GroupName="Geslacht" Name="GeslachtMan" Margin="5"/>
+            <RadioButton Content="Vrouw" GroupName="Geslacht" Name="GeslachtVrouw" Margin="5"/>
+            <RadioButton Content="nonbinair" GroupName="Geslacht" Name="NonBinair" Margin="5"/>
+        </StackPanel>
+
+        <!-- Levensstijl -->
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center">Levensstijl:</TextBlock>
+        <StackPanel VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="5" Grid.ColumnSpan="2">
+            <RadioButton Content="Actief" GroupName="Levensstijl" Name="LevensstijlActief" Margin="5"/>
+            <RadioButton Content="Niet Actief" GroupName="Levensstijl" Name="LevensstijlNietActief" Margin="5"/>
+        </StackPanel>
+
+        <!-- Leeftijd -->
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="5,0,5,0" VerticalAlignment="Center">Leeftijd:</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" Grid.ColumnSpan="2" Name="LeeftijdTextBox"/>
+
+        <!-- Zwangerschap -->
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="5,0,5,0" VerticalAlignment="Center">Zwanger:</TextBlock>
+        <CheckBox Grid.Row="3" Grid.Column="1" Margin="5,5,5,5" Name="ZwangerCheckBox"/>
+
+        <!-- Bereken Button -->
+        <Button Grid.Row="4" Grid.Column="1" Click="Bereken_Click">Bereken</Button>
+
+        <!-- Resultaat -->
+        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Margin="5" Name="ResultTextBlock" VerticalAlignment="Center" TextAlignment="Center"/>
+    </Grid>
+</Window>
