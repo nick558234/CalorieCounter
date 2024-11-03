@@ -20,15 +20,9 @@ namespace CalorieCounter
 
         private void Bereken_Click(object sender, RoutedEventArgs e)
         {
-            if (NonBinair.IsChecked == true)
-            {
-                MessageBox.Show("Nonbinair is geen geldige optie.", "Fout", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
             if (GeslachtMan.IsChecked == true && ZwangerCheckBox.IsChecked == true)
             {
-                MessageBox.Show("Een man kan niet zwanger zijn.", "Fout", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("In de war", "Fout", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -54,7 +48,7 @@ namespace CalorieCounter
 
         private double BerekenBasisCalorieën()
         {
-            if (GeslachtMan.IsChecked == true)
+            if (GeslachtMan.IsChecked == true || NonBinair.IsChecked == true)
             {
                 return 2500;
             }
@@ -70,6 +64,15 @@ namespace CalorieCounter
             if (LevensstijlNietActief.IsChecked == true)
             {
                 return calorieën * 0.9;
+            }
+            if (LevensstijlAfvallen.IsChecked == true)
+            {
+                return calorieën * 0.8;
+            }
+            if (LevensstijlBulken.IsChecked == true)
+            {
+                MessageBox.Show("Vergeet de eiwitten niet");
+                return calorieën * 1.2;
             }
             return calorieën;
         }

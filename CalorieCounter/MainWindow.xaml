@@ -34,6 +34,8 @@
         <StackPanel VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="5" Grid.ColumnSpan="2">
             <RadioButton Content="Actief" GroupName="Levensstijl" Name="LevensstijlActief" Margin="5"/>
             <RadioButton Content="Niet Actief" GroupName="Levensstijl" Name="LevensstijlNietActief" Margin="5"/>
+            <RadioButton Content="Afvallen" GroupName="Levensstijl" Name="LevensstijlAfvallen" Margin="5"/>
+            <RadioButton Content="Bulken" GroupName="Levensstijl" Name="LevensstijlBulken" Margin="5"/>
         </StackPanel>
 
         <!-- Leeftijd -->
